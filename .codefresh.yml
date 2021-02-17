@@ -31,9 +31,9 @@ steps:
     image: "node:15.2" # The image in which command will be executed
     working_directory: "${{clone}}" # Running command where code cloned
     commands:
-      - "export COVERALLS_SERVICE_NAME=${{COVERALLS_SERVICE_NAME}}"
+      - "export COVERALLS_SERVICE_NAME=${{travis-pro}}"
       - "export COVERALLS_GIT_BRANCH=${{CF_BRANCH}}"
-      - "export COVERALLS_REPO_TOKEN=${{COVERALLS_REPO_TOKEN}}"
+      - "export COVERALLS_REPO_TOKEN=${{PIxcWuO11KmWWdFz7Vtxg6ZPcFCfwM5Ye}}"
       - "npm install --save-dev jest"
       - "npm run test"
     stage: "test"             
