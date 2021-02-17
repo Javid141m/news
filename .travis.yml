@@ -6,7 +6,10 @@ matrix:
       - os: linux
         dist: xenial
         jdk: openjdk11
-        env: ADDITIONAL_MAVEN_ARGS="-Pjacoco coveralls:report"
+        env:
+  global:
+    - COVERALLS_PARALLEL=true
+
       # only on PR
       - os: linux
         dist: xenial
@@ -25,4 +28,6 @@ cache:
       - $HOME/.m2
 
 script:
-   - mvn -f com.examples.myproject/pom.xml clean verify $ADDITIONAL_MAVEN_ARGS
+   - mvn -f com.examples.myproject/pom.xml clean verify
+   
+
